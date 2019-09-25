@@ -1,0 +1,3 @@
+(iter 20) MAPbClClI_THTO_0 = 39.2486, sampling CsPbClII_THTO_1. Recommendation = CsPbClII_THTO_0, Current Cost = 410.00, Rho = 0.444
+(iter 20) MAPbClClI_THTO_0 = 39.2486, sampling MAPbBrBrI_THTO_0. Recommendation = MAPbClClI_THTO_0, Current Cost = 424.00, Rho = 0.444
+(iter 21) MAPbBrBrI_THTO_0 = 42.6589, sampling MAPbIII_THTO_0. Recommendation = MAPbBrBrI_THTO_0, Current Cost = 451.00, Rho = 0.444

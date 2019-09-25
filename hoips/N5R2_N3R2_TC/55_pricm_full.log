@@ -1,0 +1,11 @@
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling CsPbClClI_THTO_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 410.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling FAPbClClI_MCR_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 424.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling FAPbBrBrBr_THTO_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 438.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling FAPbBrClI_THTO_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 452.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling CsPbBrClI_THTO_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 466.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling FAPbClClCl_THTO_1. Recommendation = FAPbClClI_THTO_0, Current Cost = 480.00, Rho = 0.906
+(iter 20) FAPbClClI_THTO_0 = 31.0856, sampling FAPbBrBrI_THTO_0. Recommendation = FAPbClClI_THTO_0, Current Cost = 494.00, Rho = 0.906
+(iter 26) FAPbBrBrI_THTO_0 = 31.6146, sampling FAPbBrBrCl_THTO_0. Recommendation = FAPbBrBrI_THTO_0, Current Cost = 521.00, Rho = 0.906
+(iter 26) FAPbBrBrI_THTO_0 = 31.6146, sampling MAPbBrBrI_THTO_1. Recommendation = FAPbBrBrI_THTO_0, Current Cost = 548.00, Rho = 0.906
+(iter 26) FAPbBrBrI_THTO_0 = 31.6146, sampling FAPbBrBrI_THTO_1. Recommendation = FAPbBrBrI_THTO_0, Current Cost = 562.00, Rho = 0.906
+(iter 26) FAPbBrBrI_THTO_0 = 31.6146, sampling MAPbBrBrBr_THTO_1. Recommendation = MAPbBrBrI_THTO_0, Current Cost = 576.00, Rho = 0.906

@@ -1,0 +1,4 @@
+(iter 20) MAPbBrClCl_DMF_0 = 8.9885, sampling MAPbIII_NM_1. Recommendation = MAPbIII_NM_0, Current Cost = 70.00, Rho = 0.256
+(iter 20) MAPbBrClCl_DMF_0 = 8.9885, sampling MAPbClClCl_NM_0. Recommendation = MAPbBrClCl_DMF_0, Current Cost = 71.00, Rho = 0.256
+(iter 20) MAPbBrClCl_DMF_0 = 8.9885, sampling FAPbClII_CH3OH_0. Recommendation = CsPbBrClI_CH3OH_0, Current Cost = 77.00, Rho = 0.256
+(iter 20) MAPbBrClCl_DMF_0 = 8.9885, sampling FAPbClII_GBL_0. Recommendation = CsPbBrClI_DMA_0, Current Cost = 83.00, Rho = 0.256

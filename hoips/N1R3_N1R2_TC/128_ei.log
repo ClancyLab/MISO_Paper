@@ -1,0 +1,16 @@
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbClII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 60.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling CsPbClII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 66.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling FAPbClII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 72.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbIII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 78.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbBrII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 84.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling CsPbIII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 90.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbClClI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 96.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling FAPbIII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 102.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling CsPbClClI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 108.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbBrBrI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 114.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling MAPbBrClI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 120.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling FAPbClClI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 126.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling FAPbBrII_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 132.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling CsPbBrBrI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 138.00, Rho = -1.230
+(iter 10) FAPbClII_DMSO_0 = 8.7218, sampling CsPbBrClI_DMA_0. Recommendation = FAPbClII_DMSO_0, Current Cost = 144.00, Rho = -1.230
+(iter 24) CsPbBrClI_DMA_0 = 12.9686, sampling MAPbClClCl_DMA_0. Recommendation = CsPbBrClI_DMA_0, Current Cost = 150.00, Rho = -1.230

@@ -1,0 +1,4 @@
+(iter 20) FAPbBrClI_DMA_0 = 8.6497, sampling CsPbBrBrI_DMA_1. Recommendation = FAPbBrClI_DMA_0, Current Cost = 70.00, Rho = 0.621
+(iter 20) FAPbBrClI_DMA_0 = 8.6497, sampling CsPbBrII_DMA_1. Recommendation = FAPbBrClI_DMA_0, Current Cost = 71.00, Rho = 0.621
+(iter 20) FAPbBrClI_DMA_0 = 8.6497, sampling CsPbBrClI_DMA_1. Recommendation = CsPbBrII_DMA_0, Current Cost = 72.00, Rho = 0.621
+(iter 20) FAPbBrClI_DMA_0 = 8.6497, sampling CsPbBrClI_THTO_1. Recommendation = CsPbBrClI_DMA_0, Current Cost = 73.00, Rho = 0.621

@@ -1,0 +1,15 @@
+(iter 20) CsPbBrBrI_THTO_0 = 35.8493, sampling CsPbBrBrBr_THTO_0. Recommendation = CsPbBrBrI_THTO_0, Current Cost = 410.00, Rho = 0.822
+(iter 20) CsPbBrBrBr_THTO_0 = 36.8875, sampling CsPbBrBrCl_THTO_0. Recommendation = CsPbBrBrBr_THTO_0, Current Cost = 437.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling CsPbBrClCl_THTO_0. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 464.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling MAPbBrBrCl_THTO_0. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 491.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling MAPbBrBrBr_THTO_0. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 518.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling FAPbBrBrCl_THTO_1. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 545.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling FAPbBrBrBr_THTO_1. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 559.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling MAPbBrClCl_THTO_0. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 573.00, Rho = 0.822
+(iter 21) CsPbBrBrCl_THTO_0 = 38.0885, sampling CsPbBrClI_THTO_0. Recommendation = CsPbBrBrCl_THTO_0, Current Cost = 600.00, Rho = 0.822
+(iter 28) CsPbBrClI_THTO_0 = 39.1771, sampling CsPbClClCl_THTO_0. Recommendation = CsPbBrClI_THTO_0, Current Cost = 627.00, Rho = 0.822
+(iter 28) CsPbBrClI_THTO_0 = 39.1771, sampling CsPbBrII_THTO_0. Recommendation = CsPbBrClI_THTO_0, Current Cost = 654.00, Rho = 0.822
+(iter 28) CsPbBrClI_THTO_0 = 39.1771, sampling FAPbBrClCl_THTO_0. Recommendation = CsPbBrClI_THTO_0, Current Cost = 681.00, Rho = 0.822
+(iter 28) CsPbBrClI_THTO_0 = 39.1771, sampling CsPbClClI_THTO_0. Recommendation = CsPbBrClI_THTO_0, Current Cost = 708.00, Rho = 0.822
+(iter 28) CsPbBrClI_THTO_0 = 39.1771, sampling MAPbBrBrI_THTO_0. Recommendation = CsPbBrClI_THTO_0, Current Cost = 735.00, Rho = 0.822
+(iter 33) MAPbBrBrI_THTO_0 = 42.6589, sampling MAPbBrClI_THTO_0. Recommendation = MAPbBrBrI_THTO_0, Current Cost = 762.00, Rho = 0.822

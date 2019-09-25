@@ -1,0 +1,5 @@
+(iter 20) CsPbBrBrI_DMF_0 = 7.7524, sampling MAPbBrBrI_DMA_1. Recommendation = CsPbIII_DMF_0, Current Cost = 70.00, Rho = 0.810
+(iter 20) CsPbBrBrI_DMF_0 = 7.7524, sampling MAPbBrBrI_GBL_1. Recommendation = MAPbIII_DMA_0, Current Cost = 71.00, Rho = 0.810
+(iter 20) CsPbBrBrI_DMF_0 = 7.7524, sampling FAPbBrII_IPA_1. Recommendation = MAPbIII_DMA_0, Current Cost = 72.00, Rho = 0.810
+(iter 20) CsPbBrBrI_DMF_0 = 7.7524, sampling CsPbBrClI_DMA_1. Recommendation = MAPbIII_DMA_0, Current Cost = 73.00, Rho = 0.810
+(iter 20) CsPbBrBrI_DMF_0 = 7.7524, sampling CsPbIII_DMA_1. Recommendation = CsPbBrClI_DMA_0, Current Cost = 74.00, Rho = 0.810

@@ -1,0 +1,12 @@
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling CsPbBrBrI_NMP_1. Recommendation = CsPbBrBrI_NMP_0, Current Cost = 410.00, Rho = 0.820
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling CsPbClClI_DMF_1. Recommendation = CsPbClII_NMP_0, Current Cost = 424.00, Rho = 0.820
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling MAPbClClI_NMP_1. Recommendation = CsPbClII_NMP_0, Current Cost = 438.00, Rho = 0.820
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling MAPbClII_NMP_1. Recommendation = MAPbClClI_NMP_0, Current Cost = 452.00, Rho = 0.820
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling CsPbClClI_NMP_1. Recommendation = MAPbClClI_NMP_0, Current Cost = 466.00, Rho = 0.820
+(iter 20) CsPbClII_NMP_0 = 32.9945, sampling MAPbClClI_NMP_0. Recommendation = MAPbClClI_NMP_0, Current Cost = 480.00, Rho = 0.820
+(iter 25) MAPbClClI_NMP_0 = 33.0347, sampling CsPbClClI_THTO_0. Recommendation = MAPbClClI_NMP_0, Current Cost = 507.00, Rho = 0.820
+(iter 25) MAPbClClI_NMP_0 = 33.0347, sampling MAPbClClI_THTO_0. Recommendation = MAPbClClI_NMP_0, Current Cost = 534.00, Rho = 0.820
+(iter 27) MAPbClClI_THTO_0 = 39.2486, sampling MAPbClII_THTO_0. Recommendation = MAPbClClI_THTO_0, Current Cost = 561.00, Rho = 0.820
+(iter 27) MAPbClClI_THTO_0 = 39.2486, sampling MAPbBrBrBr_THTO_0. Recommendation = MAPbClClI_THTO_0, Current Cost = 588.00, Rho = 0.820
+(iter 27) MAPbClClI_THTO_0 = 39.2486, sampling MAPbBrBrI_THTO_0. Recommendation = MAPbClClI_THTO_0, Current Cost = 615.00, Rho = 0.820
+(iter 30) MAPbBrBrI_THTO_0 = 42.6589, sampling MAPbBrBrCl_THTO_0. Recommendation = MAPbBrBrI_THTO_0, Current Cost = 642.00, Rho = 0.820

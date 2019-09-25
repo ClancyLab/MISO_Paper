@@ -1,0 +1,17 @@
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbClII_DMSO_1. Recommendation = CsPbBrBrI_DMF_0, Current Cost = 150.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbIII_DMSO_1. Recommendation = CsPbClII_DMSO_0, Current Cost = 151.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbBrII_DMSO_1. Recommendation = CsPbIII_DMSO_0, Current Cost = 152.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbBrBrI_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 153.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling FAPbClII_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 154.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbClClI_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 155.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbBrBrBr_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 156.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling FAPbIII_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 157.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling CsPbBrClI_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 158.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling FAPbBrII_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 159.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling MAPbClII_DMSO_1. Recommendation = CsPbBrII_DMSO_0, Current Cost = 160.00, Rho = 0.344
+(iter 20) CsPbBrBrI_DMF_0 = 20.2684, sampling MAPbClII_DMSO_0. Recommendation = MAPbClII_DMSO_0, Current Cost = 161.00, Rho = 0.344
+(iter 31) MAPbClII_DMSO_0 = 24.0511, sampling MAPbIII_DMSO_1. Recommendation = MAPbClII_DMSO_0, Current Cost = 175.00, Rho = 0.344
+(iter 31) MAPbClII_DMSO_0 = 24.0511, sampling MAPbIII_DMSO_0. Recommendation = MAPbClII_DMSO_0, Current Cost = 176.00, Rho = 0.344
+(iter 33) MAPbIII_DMSO_0 = 28.3555, sampling CsPbIII_THTO_0. Recommendation = MAPbIII_DMSO_0, Current Cost = 190.00, Rho = 0.344
+(iter 33) MAPbIII_DMSO_0 = 28.3555, sampling MAPbIII_THTO_0. Recommendation = MAPbIII_DMSO_0, Current Cost = 204.00, Rho = 0.344
+(iter 35) MAPbIII_THTO_0 = 29.1326, sampling FAPbIII_THTO_0. Recommendation = MAPbIII_THTO_0, Current Cost = 218.00, Rho = 0.344
