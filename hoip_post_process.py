@@ -340,7 +340,7 @@ def plot_hoips(benchmark_name, best_so_far=False):
             plt.plot(
                 folder_data[lname]["cost"],
                 folder_data[lname]["mean_first_above_cost"],
-                label=label_aliases[lname].upper() if label_aliases[lname] != "pricm" else "PCM",
+                label=label_aliases[lname].upper() if label_aliases[lname] != "pricm" else "PearsonKG",
                 linestyle=ls,
                 color=color_aliases[sffx.upper() + append],
                 linewidth=3
@@ -416,9 +416,11 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
     ]
 
     label_aliases = {
-        "MisoKG_IS0": "IS$_0$",
-        "MisoKG_Full_IS": "Full",
-        "MisoKG_Overlapped_IS": "Overlap"
+        "EI": "EGO",
+        "PRICM": "PearsonKG",
+        "PCM": "PearsonKG",
+        "ICM": "MultiTaskKG",
+        "MGP": "misoKG"
     }
 
     appnd = "_" + benchmark_name
@@ -458,7 +460,7 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
             plt.plot(
                 folder_data[lname]["cost"],
                 folder_data[lname]["mean_first_above_cost"],
-                label=sffx.upper() if sffx != "pricm" else "PCM",
+                label=label_aliases[sffx.upper()],
                 linestyle=ls,
                 color=color_aliases[sffx.upper()],
                 linewidth=3
@@ -478,7 +480,7 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
     plt.plot(
         EI["cost"],
         EI["mean_first_above_cost"],
-        label="EI",
+        label="EGO",
         linestyle=line_aliases["is0"],
         color=color_aliases["EI"],
         linewidth=3

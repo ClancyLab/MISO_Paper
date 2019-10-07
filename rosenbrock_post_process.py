@@ -28,10 +28,14 @@ linestyles = [
 
 color_aliases = {
     "EI": 'dodgerblue',
+    "EGO": 'dodgerblue',
     "PCM": 'green',
+    "PEARSONKG": 'green',
     "ICM": 'orange',
+    "MULTITASKKG": 'orange',
     "SGP": 'navy',
     "MGP": 'navy',
+    "MISOKG": 'navy'
 }
 
 color_aliases_IS = {
@@ -385,10 +389,10 @@ def plot_rosenbrock(pfile_name, training_IS):
         "miso": "Standard Gaussian Process"
     }
     label_alias = {
-        "Expected Improvement": "EI",
-        "Pearson Coregionalization Model": "PCM",
-        "Intrinsic Coregionalization Model": "ICM",
-        "Standard Gaussian Process": "MGP"
+        "Expected Improvement": "EGO",
+        "Pearson Coregionalization Model": "PearsonKG",
+        "Intrinsic Coregionalization Model": "MultiTaskKG",
+        "Standard Gaussian Process": "misoKG"
         # "Standard Gaussian Process": "SGP"
     }
     sffx_to_line = {
@@ -461,8 +465,8 @@ if __name__ == "__main__":
 
     # Parse the rosenbrock benchmarks into pickle files
 
-    parse_rosenbrock(
-        models, training_IS, best_so_far=False)
+    # parse_rosenbrock(
+    #     models, training_IS, best_so_far=False)
     # parse_rosenbrock(
     #     models, training_IS, best_so_far=True)
 
