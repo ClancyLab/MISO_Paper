@@ -1,11 +1,13 @@
 '''
 '''
 import os
+import sys
 import tarfile
 import numpy as np
 import cPickle as pickle
 # import pickle
 import matplotlib
+from scipy.stats import pearsonr
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 
@@ -550,6 +552,32 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
     plt.close()
 
 
+def cross_cor(a, b):
+    '''
+    Get the pearsone correlation between sets a and b for the subset that
+    exists.
+
+    **Parameters**
+
+        a: *list, float*
+            A list of values from some IS.  If no data exists for a given
+            entry, it is None.
+        b: *list, float*
+            A list of values from some IS.  If no data exists for a given
+            entry, it is None.
+
+    **Returns**
+
+        rho: *float*
+            Pearson correlation between data.
+    '''
+    a, b = zip(*[
+        (i, j) for i, j in zip(a, b)
+        if not any([i is None, j is None])
+    ])
+    return pearsonr(a, b)[0]
+
+
 def plot_raw_data(sort_by="N1R2"):
     '''
     This function reads in the enthalpy_N*_R^_Ukcal-mol data files and plots
@@ -605,6 +633,25 @@ def plot_raw_data(sort_by="N1R2"):
 
     plt.savefig("hoip_imgs/IS_comparison.png")
 
+    # Find cross correlations
+    all_data = [
+        ("Hybrid-1", N1R3), ("GGA-1", N1R2),
+        ("GGA-3", N3R2), ("GGA-5", N5R2)
+    ]
+    print("-" * 79)
+    print("          " + "  ".join([a for a, b in all_data]))
+    for n1, v1 in all_data:
+        sys.stdout.write(n1)
+        if n1 != "Hybrid-1":
+            sys.stdout.write("   ")
+        for n2, v2 in all_data:
+            if n2 == "Hybrid-1":
+                sys.stdout.write("  ")
+            sys.stdout.write("  %.2f " % cross_cor(v1, v2))
+            if n2 == "Hybrid-1":
+                sys.stdout.write(" ")
+        sys.stdout.write("\n")
+    print("-" * 79)
 
 if __name__ == "__main__":
     models = ["pricm", "icm", "ei"]
@@ -612,11 +659,11 @@ if __name__ == "__main__":
         os.mkdir("hoip_imgs")
 
     # Generate the pickle files for plotting
-    for benchmark_name in ["N1R3_N1R2_TC", "N3R2_N1R2_TC", "N5R2_N3R2_TC"]:
-#        parse_hoips(models, best_so_far=False, benchmark_name=benchmark_name)
-#        plot_hoips(benchmark_name, best_so_far=False)
-        plot_hoips_2(benchmark_name, "MisoKG_Overlapped_IS", best_so_far=False)
-        plot_hoips_2(benchmark_name, "MisoKG_IS0", best_so_far=False)
+#     for benchmark_name in ["N1R3_N1R2_TC", "N3R2_N1R2_TC", "N5R2_N3R2_TC"]:
+# #        parse_hoips(models, best_so_far=False, benchmark_name=benchmark_name)
+# #        plot_hoips(benchmark_name, best_so_far=False)
+#         plot_hoips_2(benchmark_name, "MisoKG_Overlapped_IS", best_so_far=False)
+#         plot_hoips_2(benchmark_name, "MisoKG_IS0", best_so_far=False)
 
 
     # Generate the comparison of IS from the enthalpy pickled files.
