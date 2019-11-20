@@ -603,7 +603,7 @@ def plot_raw_data(sort_by="N1R2"):
     plt.ylabel("Intermolecular Binding Energy (kcal/mol)")
     plt.legend()
 
-    plt.savefig("hoips/IS_comparison.png")
+    plt.savefig("hoip_imgs/IS_comparison.png")
 
 
 if __name__ == "__main__":
