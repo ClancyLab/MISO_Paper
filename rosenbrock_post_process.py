@@ -1,8 +1,10 @@
 '''
 '''
 import os
+import tarfile
 import numpy as np
 import cPickle as pickle
+# import pickle
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
@@ -329,7 +331,8 @@ def plot_cross_rosenbrock(pfile_name, best_so_far=False):
     '''
     Plot data in processed.pickle
     '''
-    data = pickle.load(open(pfile_name, 'r'))
+    # data = pickle.load(open(pfile_name, 'r'))
+    data = tar_load(pfile_name)
 
     for sim in data.keys():
         sdata = data[sim]
@@ -378,6 +381,30 @@ def plot_cross_rosenbrock(pfile_name, best_so_far=False):
             plt.close()
 
 
+def tar_load(fname):
+    '''
+    Read in the relevant file from the parsed_output.tar.gz file.
+
+    **Parameters**
+
+        fname: *str*
+            The file to read in.
+
+    **Returns**
+
+        data:
+            The file contents
+    '''
+    tar = tarfile.open("parsed_output.tar.gz")
+    members = tar.getmembers()
+    mems = [t.name.replace("parsed_output/", "") for t in members]
+    assert fname in mems,\
+        "Error - Desired file (%s) not in parsed_output.tar.gz." % fname
+    index = mems.index(fname)
+    return pickle.load(tar.extractfile(members[index]))
+    # return pickle.load(tar.extractfile(members[index]), encoding="latin1")
+
+
 def plot_rosenbrock(pfile_name, training_IS):
     '''
     Plot data in processed.pickle
@@ -400,14 +427,15 @@ def plot_rosenbrock(pfile_name, training_IS):
         for i, sffx in enumerate(["ei", "pricm", "icm", "miso"])
     }
 
-    data = pickle.load(open(pfile_name, 'r'))
+    # data = pickle.load(open(pfile_name, 'r'))
+    data = tar_load(pfile_name)
 
     for sim in data.keys():
         sdata = data[sim]
 
         for model in sdata.keys():
             mdata = sdata[model][training_IS]
-            if mdata.keys() == []:
+            if list(mdata.keys()) == []:
                 continue
             cost = mdata["cost"]
             mean = mdata["mean_first_above_cost"]

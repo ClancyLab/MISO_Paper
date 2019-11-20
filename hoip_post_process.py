@@ -1,8 +1,10 @@
 '''
 '''
 import os
+import tarfile
 import numpy as np
 import cPickle as pickle
+# import pickle
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
@@ -185,6 +187,30 @@ def read_data(folder, sffx, i, IS0, verbose=True):
     return COST[:counter], ENERGY[:counter]
 
 
+def tar_load(fname):
+    '''
+    Read in the relevant file from the parsed_output.tar.gz file.
+
+    **Parameters**
+
+        fname: *str*
+            The file to read in.
+
+    **Returns**
+
+        data:
+            The file contents
+    '''
+    tar = tarfile.open("parsed_output.tar.gz")
+    members = tar.getmembers()
+    mems = [t.name.replace("parsed_output/", "") for t in members]
+    assert fname in mems,\
+        "Error - Desired file (%s) not in parsed_output.tar.gz." % fname
+    index = mems.index(fname)
+    return pickle.load(tar.extractfile(members[index]))
+    # return pickle.load(tar.extractfile(members[index]), encoding="latin1")
+
+
 def parse_hoips(models, best_so_far=True, benchmark_name="N1R3_N1R2_TC"):
     # We want to plot "value first exceeding cost"
     # https://stackoverflow.com/a/2236935
@@ -306,7 +332,7 @@ def plot_hoips(benchmark_name, best_so_far=False):
     if best_so_far:
         appnd += "_sorted"
 
-    sffx_data = pickle.load(open("cross_processed_miso%s.pickle" % appnd, 'r'))
+    sffx_data = tar_load("cross_processed_miso%s.pickle" % appnd)
 
     EI = sffx_data["ei"]["MisoKG_IS0"]
 
@@ -427,7 +453,7 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
     if best_so_far:
         appnd += "_sorted"
 
-    sffx_data = pickle.load(open("cross_processed_miso%s.pickle" % appnd, 'r'))
+    sffx_data = tar_load("cross_processed_miso%s.pickle" % appnd)
 
     EI = sffx_data["ei"]["MisoKG_IS0"]
 
@@ -524,6 +550,62 @@ def plot_hoips_2(benchmark_name, training_IS, best_so_far=False):
     plt.close()
 
 
+def plot_raw_data(sort_by="N1R2"):
+    '''
+    This function reads in the enthalpy_N*_R^_Ukcal-mol data files and plots
+    them on a single graph.  To make the plot more readable, it is sorted to
+    an information source specified (by default N1R2, the single solvent
+    at the GGA level of theory).
+
+    Note - The naming convention for enthalpy_N5_R2_wo_GBL_Ukcal-mol is
+    done due to the fact that we found out our GBL data was grossly inaccurate
+    for that data set, so it was removed.  Inaccuracy was due to unconverged
+    data on a cluster that had crashed.
+
+    **Parameters**
+
+        sort_by: *str, optional*
+            The data set to sort by.
+
+    **Returns**
+
+        None.
+    '''
+    N1R2 = pickle.load(open("hoips/enthalpy_N1_R2_Ukcal-mol", 'r'))
+    N1R3 = pickle.load(open("hoips/enthalpy_N1_R3_Ukcal-mol", 'r'))
+    N3R2 = pickle.load(open("hoips/enthalpy_N3_R2_Ukcal-mol", 'r'))
+    N5R2 = pickle.load(open("hoips/enthalpy_N5_R2_wo_GBL_Ukcal-mol", 'r'))
+
+    all_keys = list(N1R2.keys()) + list(N1R3.keys()) +\
+        list(N3R2.keys()) + list(N5R2.keys())
+    all_keys = list(set(all_keys))
+
+    data = [
+        (N1R2[k] if k in N1R2 else None,
+         N1R3[k] if k in N1R3 else None,
+         N3R2[k] if k in N3R2 else None,
+         N5R2[k] if k in N5R2 else None)
+        for k in all_keys
+    ]
+
+    data.sort(
+        key=lambda x: x[["N1R2", "N1R3", "N3R2", "N5R2"].index(sort_by)]
+    )
+
+    N1R2, N1R3, N3R2, N5R2 = zip(*data)
+    xvals = list(range(len(all_keys)))
+    plt.plot(xvals, N1R2, 'bD', markersize=4, label="GGA-1")  # N1R2
+    plt.plot(xvals, N1R3, 'gs', markersize=4, label="Hybrid-1")  # N1R3
+    plt.plot(xvals, N3R2, 'r.', markersize=4, label="GGA-3")  # N3R2
+    plt.plot(xvals, N5R2, 'c*', markersize=4, label="GGA-5")  # N5R2
+
+    plt.xlabel("HOIP-Solvent System")
+    plt.ylabel("Intermolecular Binding Energy (kcal/mol)")
+    plt.legend()
+
+    plt.savefig("hoips/IS_comparison.png")
+
+
 if __name__ == "__main__":
     models = ["pricm", "icm", "ei"]
     if not os.path.isdir("hoip_imgs"):
@@ -536,3 +618,9 @@ if __name__ == "__main__":
         plot_hoips_2(benchmark_name, "MisoKG_Overlapped_IS", best_so_far=False)
         plot_hoips_2(benchmark_name, "MisoKG_IS0", best_so_far=False)
 
+
+    # Generate the comparison of IS from the enthalpy pickled files.
+    plot_raw_data("N1R2")
+    # plot_raw_data("N1R3")
+    # plot_raw_data("N3R2")
+    # plot_raw_data("N5R2")

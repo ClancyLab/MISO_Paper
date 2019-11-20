@@ -1,4 +1,5 @@
 import os
+import tarfile
 import numpy as np
 from squid import units
 import cPickle as pickle
@@ -35,12 +36,42 @@ def get_index(lc, c, inv=False):
         return -1
 
 
+def tar_load(fname):
+    '''
+    Read in the relevant file from the parsed_output.tar.gz file.
+
+    **Parameters**
+
+        fname: *str*
+            The file to read in.
+
+    **Returns**
+
+        data:
+            The file contents
+    '''
+    tar = tarfile.open("parsed_output.tar.gz")
+    members = tar.getmembers()
+    mems = [t.name.replace("parsed_output/", "") for t in members]
+    assert fname in mems,\
+        "Error - Desired file (%s) not in parsed_output.tar.gz." % fname
+    index = mems.index(fname)
+    return pickle.load(tar.extractfile(members[index]))
+
+
+def get_pickled_filenames():
+    return [
+        t.name.replace("parsed_output/", "")
+        for t in tarfile.open("parsed_output.tar.gz").getmembers()
+    ]
+
+
 def analyze_rosenbrock_data(percentile=0.999):
     '''
     Print out information about the data in regards to mean to max, std to max,
     and percentiles to max.
     '''
-    for fptr in os.listdir("."):
+    for fptr in get_pickled_filenames():
         if not fptr.endswith(".pickle"):
             continue
         if "rosenbrock" not in fptr:
@@ -49,7 +80,8 @@ def analyze_rosenbrock_data(percentile=0.999):
         print("-" * DASH_LEN)
         print("FILE: %s" % fptr)
         print("-" * DASH_LEN)
-        folder_data = pickle.load(open(fptr, 'r'))
+        # folder_data = pickle.load(open(fptr, 'r'))
+        folder_data = tar_load(fptr)
 
         # Find best value across all
         best, worst = float('inf'), float('-inf')
@@ -100,7 +132,7 @@ def analyze_data(percentile=0.999):
     Print out information about the data in regards to mean to max, std to max,
     and percentiles to max.
     '''
-    for fptr in os.listdir("."):
+    for fptr in get_pickled_filenames():
         if not fptr.endswith(".pickle"):
             continue
         if "rosenbrock" in fptr:
@@ -109,7 +141,8 @@ def analyze_data(percentile=0.999):
         print("-" * DASH_LEN)
         print("FILE: %s" % fptr)
         print("-" * DASH_LEN)
-        folder_data = pickle.load(open(fptr, 'r'))
+        # folder_data = pickle.load(open(fptr, 'r'))
+        folder_data = tar_load(fptr)
 
         # Find best value across all
         best, worst = float('inf'), float('-inf')
