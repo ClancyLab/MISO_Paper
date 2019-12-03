@@ -334,6 +334,17 @@ def plot_cross_rosenbrock(pfile_name, best_so_far=False):
     # data = pickle.load(open(pfile_name, 'r'))
     data = tar_load(pfile_name)
 
+    label_alias = {
+        "Expected Improvement": "EGO",
+        "Pearson Coregionalization Model": "PearsonKG",
+        "Intrinsic Coregionalization Model": "MultiTaskKG",
+        "Standard Gaussian Process": "misoKG",
+        "is0": "Costly",
+        "overlap": "Intersection",
+        "full": "Full",
+        # "Standard Gaussian Process": "SGP"
+    }
+
     for sim in data.keys():
         sdata = data[sim]
         for model in sdata.keys():
@@ -352,7 +363,7 @@ def plot_cross_rosenbrock(pfile_name, best_so_far=False):
 
                 plt.plot(
                     cost, mean,
-                    label=ts,
+                    label=label_alias[ts],
                     linestyle=linestyles[0],
                     color=color_aliases_IS[ts],
                     linewidth=3
@@ -377,6 +388,7 @@ def plot_cross_rosenbrock(pfile_name, best_so_far=False):
             plt.ylabel("Mean Function Value Exceeding Cost")
             appnd = "_" + sim + "_" + model + "_" + ts +\
                 ("_sorted" if best_so_far else "")
+            plt.tight_layout()
             plt.savefig("rosenbrock_imgs/cross_rosenbrock%s.png" % appnd)
             plt.close()
 
@@ -515,10 +527,10 @@ if __name__ == "__main__":
 
     # Plot the comparison of training sets for the Supplementary Information
 
-    # plot_cross_rosenbrock(
-    #     "rosenbrock_pricm.icm.miso.ei_is0.full.overlap.pickle",
-    #     best_so_far=False
-    # )
+    plot_cross_rosenbrock(
+        "rosenbrock_pricm.icm.miso.ei_is0.full.overlap.pickle",
+        best_so_far=False
+    )
     # plot_cross_rosenbrock(
     #     "rosenbrock_pricm.icm.miso.ei_is0.full.overlap_sorted.pickle",
     #     best_so_far=True
